@@ -16,10 +16,20 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // CORS middleware
+ 
+
+
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'https://assignmentaskmaker.netlify.app/',
-  credentials: true
+  origin: [
+    'http://localhost:5173',
+    'http://localhost:3000',
+    'https://assignmentaskmaker.netlify.app/'  
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
 
 // Routes
 app.use('/api/auth', require('./routes/auth'));
