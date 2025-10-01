@@ -30,8 +30,7 @@ app.use(cors({
   optionsSuccessStatus: 204
 }));
 
-// Handle preflight
-app.options('/*', cors()); // <-- note the /* instead of *
+ 
 
 
 
