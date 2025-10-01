@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // CORS middleware
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:5173',
+  origin: process.env.CLIENT_URL || 'https://assignmentaskmaker.netlify.app/',
   credentials: true
 }));
 
